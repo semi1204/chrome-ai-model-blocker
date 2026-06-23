@@ -1,0 +1,6 @@
+[Unit]
+Description=Delete Chrome on-device AI model directory
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/chrome-block-ai-model.sh

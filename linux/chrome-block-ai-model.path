@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch for Chrome on-device AI model directory
+
+[Path]
+PathExists=%h/.config/google-chrome/OptGuideOnDeviceModel
+PathExists=%h/.config/chromium/OptGuideOnDeviceModel
+Unit=chrome-block-ai-model.service
+
+[Install]
+WantedBy=default.target
