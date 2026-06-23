@@ -26,30 +26,39 @@ It also removes `OptGuideOnDeviceClassifierModel` (a smaller companion model).
 > Restart Chrome after installing. Verify the policy at `chrome://policy`
 > (look for `GenAILocalFoundationalModelSettings = 1`).
 
-## Install
+## Install (one line)
 
-### macOS
+### macOS / Linux
 ```sh
-macos/install.sh
-```
-
-### Linux
-```sh
-linux/install.sh          # writes the managed policy via sudo
+curl -fsSL https://raw.githubusercontent.com/semi1204/chrome-ai-model-blocker/master/install.sh | sh
 ```
 
 ### Windows (PowerShell)
 ```powershell
-# Run in a normal (non-admin) PowerShell window
-powershell -ExecutionPolicy Bypass -File windows\install.ps1
+irm https://raw.githubusercontent.com/semi1204/chrome-ai-model-blocker/master/install.ps1 | iex
 ```
 
-## Uninstall
+> On Linux the installer uses `sudo` to write the managed policy file.
+
+## Uninstall (one line)
+
+### macOS / Linux
+```sh
+curl -fsSL https://raw.githubusercontent.com/semi1204/chrome-ai-model-blocker/master/uninstall.sh | sh
+```
+
+### Windows (PowerShell)
+```powershell
+irm https://raw.githubusercontent.com/semi1204/chrome-ai-model-blocker/master/uninstall.ps1 | iex
+```
+
+## Manual install (from a clone)
 
 ```sh
-macos/uninstall.sh        # macOS
-linux/uninstall.sh        # Linux
-powershell -ExecutionPolicy Bypass -File windows\uninstall.ps1   # Windows
+git clone https://github.com/semi1204/chrome-ai-model-blocker
+cd chrome-ai-model-blocker
+macos/install.sh     # or: linux/install.sh
+# Windows: powershell -ExecutionPolicy Bypass -File windows\install.ps1
 ```
 
 ## Notes / trade-offs
